@@ -5,6 +5,6 @@ import {
   faGoogle,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
-import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faLock, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faLock, faUser, faTwitter, faFacebookF, faGoogle, faLinkedinIn);
+library.add(faLock, faUser, faEnvelope, faTwitter, faFacebookF, faGoogle, faLinkedinIn);
