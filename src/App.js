@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import SignIn from "./components/SignIn/SignIn";
+import SignUp from "./components/SignUp/SignUp";
+import Panels from "./components/Panels/Panels";
+
+import "./App.scss";
 
 function App() {
+  const [isSignUp, setIsSignUp] = useState(false);
+
+  const toogleClickHandler = () => setIsSignUp(!isSignUp);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`container ${isSignUp ? "sign-up-mode" : ""}`}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <SignIn />
+          <SignUp />
+        </div>
+      </div>
+      <Panels toogleClickHandler={toogleClickHandler}/>
     </div>
   );
 }
